@@ -120,7 +120,7 @@ void alterarCarro(char carros[VETOR_MAX][TAM_MAX],int precos[VETOR_MAX]) {
     printf("Nome do carro: ");
     fgets(carros[posicaoEncontrada], TAM_MAX, stdin);
     carros[posicaoEncontrada][strcspn(carros[posicaoEncontrada], "\n")] = '\0';
-    printf("Ano do carro: ");
+    printf("Preço do carro: ");
     scanf("%d", &precos[posicaoEncontrada]);
     printf("=========================\n");
     printf("Carro alterado!\n");
@@ -211,6 +211,7 @@ void cadastrarCliente(char clientes[VETOR_MAX][TAM_MAX],long int contato[VETOR_M
     }
 }
 void alterarCliente(char clientes[VETOR_MAX][TAM_MAX],long int contato[VETOR_MAX]){
+
     //Procurando a string no array de strings
     char clienteProcurado[TAM_MAX];
     int posicaoEncontrada = -1;
@@ -236,12 +237,12 @@ void alterarCliente(char clientes[VETOR_MAX][TAM_MAX],long int contato[VETOR_MAX
     printf("=========================\n");
     printf("Cliente %d\n", posicaoEncontrada+1);
     printf("Nome do cliente: ");
-    fgets(clienteProcurado, TAM_MAX, stdin);
-    clienteProcurado[strcspn(clienteProcurado, "\n")] = '\0';
+    fgets(clientes[posicaoEncontrada], TAM_MAX, stdin);
+    clientes[posicaoEncontrada][strcspn(clientes[posicaoEncontrada], "\n")] = '\0';
     printf("Contato do cliente: ");
-    scanf("%ld", &contato[posicaoEncontrada]);
+    scanf("%ld",&contato[posicaoEncontrada]);
     printf("=========================\n");
-    printf("Carro alterado!\n");
+    printf("Cliente Alterado!\n");
 }
 void excluirCliente(char clientes[VETOR_MAX][TAM_MAX],long int contato[VETOR_MAX]){
     //Procurando a string no array de strings
@@ -348,7 +349,7 @@ void realizarVendas(char carros[VETOR_MAX][TAM_MAX],char carrosEncomendados[VETO
         strcpy(carrosEncomendados[posicaoVazia], carroProcurado);
         strcpy(clientesEncomendas[posicaoVazia], clienteProcurado);
         printf("O carro '%s' não está presente no estoque!\n", carroProcurado);
-        printf("Assim que ele estiver disponível, ele será seu imediatamente!\n\n");
+        printf("Assim que ele estiver disponível, será imediatamente seu!\n\n");
     }
 }
 void consultarVendas(char carrosVendidos[VETOR_MAX][TAM_MAX],char carrosVendidosClientes[VETOR_MAX][TAM_MAX],int carrosVendidosPrecos[VETOR_MAX]){
