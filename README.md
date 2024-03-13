@@ -1,2 +1,2 @@
 # Atividade-Avaliativa-de-Algoritmos
-Aprendendo C
+Aprendendo C e praticando
